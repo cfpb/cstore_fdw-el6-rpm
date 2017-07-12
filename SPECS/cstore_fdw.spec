@@ -1,7 +1,7 @@
 ##########################
 # Set global SPEC variables
 ############################
-%global _version 1.4
+%global _version 1.5.1
 
 ###############
 # Set metadata
@@ -15,9 +15,9 @@ Summary: Columnar store for analytics with PostgreSQL.
 Group:   Applications/Databases
 License: Apache License
 URL:     https://github.com/citusdata/cstore_fdw
-Source:  https://github.com/citusdata/cstore_fdw/archive/v1.4.tar.gz
-Obsoletes: cstore_fdw%{_suffix} <= 1.4
-Provides: cstore_fdw%{_suffix} = 1.4
+Source:  https://github.com/citusdata/cstore_fdw/archive/v%{_version}.tar.gz
+Obsoletes: cstore_fdw%{_suffix} <= %{_version}
+Provides: cstore_fdw%{_suffix} = %{_version}
 
 %description
 This extension uses the Optimized Row Columnar (ORC) format for its data layout. ORC improves upon the RCFile format developed at Facebook, and brings the following benefits:
@@ -74,7 +74,8 @@ make install USE_PGXS=1 DESTDIR=${RPM_BUILD_ROOT}
 %{pg_dir}/share/extension/cstore_fdw--1.1--1.2.sql
 %{pg_dir}/share/extension/cstore_fdw--1.2--1.3.sql
 %{pg_dir}/share/extension/cstore_fdw--1.3--1.4.sql
-%{pg_dir}/share/extension/cstore_fdw--1.4.sql
+%{pg_dir}/share/extension/cstore_fdw--1.4--1.5.sql
+%{pg_dir}/share/extension/cstore_fdw--1.5.sql
 %{pg_dir}/share/extension/cstore_fdw.control
 
 %doc
