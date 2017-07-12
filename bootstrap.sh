@@ -8,7 +8,7 @@ if [ "$SCRIPTPATH" = "/tmp" ] ; then
 fi
 
 # Install Dependencies
-wget http://download.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+wget --quiet http://download.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
 sudo rpm -ivh epel-release-6-8.noarch.rpm
 sudo yum -y install protobuf-c-devel
 sudo yum -y groupinstall "Development tools"
@@ -20,4 +20,4 @@ echo '%_topdir '$HOME'/rpmbuild' > $HOME/.rpmmacros
 
 # Download source code
 cd $HOME/rpmbuild/SOURCES
-wget --quiet https://github.com/citusdata/cstore_fdw/archive/v1.4.tar.gz
+wget --quiet https://github.com/citusdata/cstore_fdw/archive/v1.5.1.tar.gz
